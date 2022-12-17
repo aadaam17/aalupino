@@ -1,0 +1,91 @@
+{% extends 'main.html' %}
+
+{% load static %}
+
+{% block content %}
+<!-- Products Details -->
+<section class="product-details section" id="product-details">
+    <div class="pro-description">
+        <span>Adidas</span>
+        <h5>Cartoon Summer T-Shirt</h5>
+        <h4>$98</h4>
+    </div>
+    <div class="product-img">
+        <img src="{% static './assets/img/products/f1.jpg' %}" alt="" width="100%" class="main-img">
+
+        <div class="swiper swiper2">
+            <div class="swiper-wrapper sm-product-imgs">
+                <div class="sm-product-col swiper-slide">
+                    <img src="{% static './assets/img/products/f1.jpg' %}" alt="" width="100%" class="sm-img active-img">
+                </div>
+                <div class="sm-product-col swiper-slide">
+                    <img src="{% static './assets/img/products/f3.jpg' %}" alt="" width="100%" class="sm-img">
+                </div>
+                <div class="sm-product-col swiper-slide">
+                    <img src="{% static './assets/img/products/f4.jpg' %}" alt="" width="100%" class="sm-img">
+                </div>
+                <div class="sm-product-col swiper-slide">
+                    <img src="{% static './assets/img/products/f5.jpg' %}" alt="" width="100%" class="sm-img">
+                </div>
+                <div class="sm-product-col swiper-slide">
+                    <img src="{% static './assets/img/products/f6.jpg' %}" alt="" width="100%" class="sm-img">
+                </div>
+                <div class="sm-product-col swiper-slide">
+                    <img src="{% static './assets/img/products/n5.jpg' %}" alt="" width="100%" class="sm-img">
+                </div>
+                <div class="sm-product-col swiper-slide">
+                    <img src="{% static './assets/img/products/n4.jpg' %}" alt="" width="100%" class="sm-img">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pro-sizes">
+        <div class="size-details">
+            <span>Select Size</span>
+            <span id="guide">Size Guide</span>
+        </div>
+        <div class="size-btns">
+            <button class="size-btn">XS</button>
+            <button class="size-btn">S</button>
+            <button class="size-btn">M</button>
+            <button class="size-btn">L</button>
+            <button class="size-btn">XL</button>
+            <button class="size-btn">XXL</button>
+            <button class="size-btn">XL Tall</button>
+        </div>
+    </div>
+
+    <div class="add-product">
+        <button class="add-to-bag">Add to Bag</button>
+        <button class="fav">
+            <span>Favorite</span>
+            <i class="ri-heart-line heart-icon"></i>
+        </button>
+    </div>
+
+    <div class="pro-note">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias, odio quisquam. Aliquam qui distinctio
+            explicabo nesciunt inventore, voluptatibus
+        </p>
+        <div class="note-details">
+            <div>
+                <span class="dot"></span>
+                <span>Product color: Colored</span>
+            </div>
+            <div>
+                <span class="dot"></span>
+                <span>Product code: R4ND0M</span>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+{% include 'trendads.html' %}
+{% include 'suggestproduct.html' %}
+{% include 'articleslider.html' %}
+{% include 'newsletter.html' %}
+
+
+{% endblock content %}

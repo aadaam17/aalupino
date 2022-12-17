@@ -1,0 +1,471 @@
+<!-- Header -->
+<header class="header" id="header">
+    <nav class="navbar container">
+        <a href="{% url 'home' %}" class="noSelect">
+            <h2 class="logo">AaLupino</h2>
+        </a>
+
+        <div class="screen-lg-menu screen-sm-hidden" id="screen-lg-menu">
+            <ul class="list">
+                <li class="menu-item">
+                    <a href="#" class="menu-link current">Home</a>
+                </li>
+                <li class="menu-item">
+                    <a href="#" class="menu-link">Shop</a>
+                </li>
+                <li class="menu-item">
+                    <a href="#" class="menu-link">Categories</a>
+                </li>
+                <li class="menu-item">
+                    <a href="#" class="menu-link">Magazine</a>
+                </li>
+                <li class="menu-item">
+                    <a href="#" class="menu-link">Blog</a>
+                </li>
+                <li class="menu-item">
+                    <a href="#" class="menu-link">Live Chat</a>
+                </li>
+                <li class="menu-item">
+                    <a href="#" class="menu-link">About</a>
+                </li>
+                <li class="menu-item">
+                    <a href="#" class="menu-link">Contact</a>
+                </li>
+                <li class="menu-item">
+                    <a href="#" class="menu-link">
+                        <i class="ri-shopping-bag-line"></i>
+                    </a>
+                </li>
+                <li class="menu-item screen-lg-hidden">
+                    <a href="./login" class="menu-link fancy">
+                        <span>Sign in</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="menu screen-lg-hidden" id="menu">
+            <div class="list">
+                <div class="menu-item thick">
+                    <div class="menu-link" id="menu-link-1">
+                        <span>New and Featured</span>
+                        <i class="ri-arrow-right-s-line"></i>
+                    </div>
+                </div>
+                <div class="menu-item thick">
+                    <div class="menu-link" id="menu-link-2">
+                        <span>Men</span>
+                        <i class="ri-arrow-right-s-line"></i>
+                    </div>
+                </div>
+                <div class="menu-item thick">
+                    <div class="menu-link" id="menu-link-3">
+                        <span>Women</span>
+                        <i class="ri-arrow-right-s-line"></i>
+                    </div>
+                </div>
+                <div class="menu-item thick">
+                    <div class="menu-link" id="menu-link-4">
+                        <span>Kids</span>
+                        <i class="ri-arrow-right-s-line"></i>
+                    </div>
+                </div>
+                <div class="menu-item thick">
+                    <div class="menu-link" id="menu-link-5">
+                        <span>Sale</span>
+                        <i class="ri-arrow-right-s-line"></i>
+                    </div>
+                </div>
+                <div class="menu-item thick">
+                    <div class="menu-link" id="menu-link-6">
+                        <span>Drops</span>
+                        <i class="ri-arrow-right-s-line"></i>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <button class="btn place-items-center noSelect" id="theme-toggle-btn">
+                        <i class="ri-sun-line sun-icon"></i>
+                        <i class="ri-moon-line moon-icon"></i>
+                    </button>
+                </div>
+
+                <hr>
+
+                <div class="menu-item">
+                    <a href="#" class="menu-link noSelect">
+                        <span>Live Chat</span>
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="#" class="menu-link noSelect">
+                        <span>Orders</span>
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="#" class="menu-link noSelect">
+                        <span>Exchanges and Returns</span>
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="{% url 'emaillookup' %}" class="menu-link fancy noSelect">
+                        <span>Sign In</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="sub-menu screen-lg-hidden" id="sub-menu-1">
+            <div class="list">
+                <button class="btn noSelect" id="close-menu-btn-1">
+                    <i class="ri-arrow-left-s-line"></i>
+                    <span>All</span>
+                </button>
+            </div>
+            <h3 class=" thick">New and Featured</h3>
+            <hr>
+            <div class="list">
+                <div class="menu-item">
+                    <a href="#" class="menu-link noSelect">
+                        <span>New Lorem Ipsum</span>
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="#" class="menu-link noSelect">
+                        <span>Men Lorem Ipsum</span>
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="#" class="menu-link noSelect">
+                        <span>Women Ipsum</span>
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="#" class="menu-link noSelect">
+                        <span>Kids Lorem ipsum</span>
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="#" class="menu-link noSelect">
+                        <span>Sale</span>
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="#" class="menu-link noSelect">
+                        <span>New Drops</span>
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="#" class="menu-link noSelect">
+                        <span>Lorem Classic</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="sub-menu screen-lg-hidden" id="sub-menu-2">
+            <div class="list">
+                <button class="btn noSelect" id="close-menu-btn-2">
+                    <i class="ri-arrow-left-s-line"></i>
+                    <span>All</span>
+                </button>
+            </div>
+            <h3 class=" thick">Men</h3>
+            <hr>
+            <div class="list">
+                <div class="menu-item">
+                    <a href="{% url 'shop' %}" class="menu-link noSelect">
+                        <span>New Men Ipsum</span>
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="#" class="menu-link noSelect">
+                        <span>Men Lorem Ipsum</span>
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="#" class="menu-link noSelect">
+                        <span>Men Ipsum</span>
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="#" class="menu-link noSelect">
+                        <span>Men Lorem ip</span>
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="#" class="menu-link noSelect">
+                        <span>Men Sale</span>
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="#" class="menu-link noSelect">
+                        <span>New Men Drops</span>
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="#" class="menu-link noSelect">
+                        <span>Men Classic</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="sub-menu screen-lg-hidden" id="sub-menu-3">
+            <div class="list">
+                <button class="btn noSelect" id="close-menu-btn-3">
+                    <i class="ri-arrow-left-s-line"></i>
+                    <span>All</span>
+                </button>
+            </div>
+            <h3 class=" thick">Women</h3>
+            <hr>
+            <div class="list">
+                <div class="menu-item">
+                    <a href="#" class="menu-link noSelect">
+                        <span>New Lorem Ipsum</span>
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="#" class="menu-link noSelect">
+                        <span>Men Lorem Ipsum</span>
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="#" class="menu-link noSelect">
+                        <span>Women Ipsum</span>
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="#" class="menu-link noSelect">
+                        <span>Kids Lorem ipsum</span>
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="#" class="menu-link noSelect">
+                        <span>Sale</span>
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="#" class="menu-link noSelect">
+                        <span>New Drops</span>
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="#" class="menu-link noSelect">
+                        <span>Lorem Classic</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="sub-menu screen-lg-hidden" id="sub-menu-4">
+            <div class="list">
+                <button class="btn noSelect" id="close-menu-btn-4">
+                    <i class="ri-arrow-left-s-line"></i>
+                    <span>All</span>
+                </button>
+            </div>
+            <h3 class=" thick">Kids</h3>
+            <hr>
+            <div class="list">
+                <div class="menu-item">
+                    <a href="#" class="menu-link noSelect">
+                        <span>New Lorem Ipsum</span>
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="#" class="menu-link noSelect">
+                        <span>Men Lorem Ipsum</span>
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="#" class="menu-link noSelect">
+                        <span>Women Ipsum</span>
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="#" class="menu-link noSelect">
+                        <span>Kids Lorem ipsum</span>
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="#" class="menu-link noSelect">
+                        <span>Sale</span>
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="#" class="menu-link noSelect">
+                        <span>New Drops</span>
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="#" class="menu-link noSelect">
+                        <span>Lorem Classic</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="sub-menu screen-lg-hidden" id="sub-menu-5">
+            <div class="list">
+                <button class="btn noSelect" id="close-menu-btn-5">
+                    <i class="ri-arrow-left-s-line"></i>
+                    <span>All</span>
+                </button>
+            </div>
+            <h3 class=" thick">Sale</h3>
+            <hr>
+            <div class="list">
+                <div class="menu-item">
+                    <a href="#" class="menu-link noSelect">
+                        <span>New Lorem Ipsum</span>
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="#" class="menu-link noSelect">
+                        <span>Men Lorem Ipsum</span>
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="#" class="menu-link noSelect">
+                        <span>Women Ipsum</span>
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="#" class="menu-link noSelect">
+                        <span>Kids Lorem ipsum</span>
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="#" class="menu-link noSelect">
+                        <span>Sale</span>
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="#" class="menu-link noSelect">
+                        <span>New Drops</span>
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="#" class="menu-link noSelect">
+                        <span>Lorem Classic</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="sub-menu screen-lg-hidden" id="sub-menu-6">
+            <div class="list">
+                <button class="btn noSelect" id="close-menu-btn-6">
+                    <i class="ri-arrow-left-s-line"></i>
+                    <span>All</span>
+                </button>
+            </div>
+            <h3 class=" thick">Drops</h3>
+            <hr>
+            <div class="list">
+                <div class="menu-item">
+                    <a href="#" class="menu-link noSelect">
+                        <span>New Lorem Ipsum</span>
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="#" class="menu-link noSelect">
+                        <span>Men Lorem Ipsum</span>
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="#" class="menu-link noSelect">
+                        <span>Women Ipsum</span>
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="#" class="menu-link noSelect">
+                        <span>Kids Lorem ipsum</span>
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="#" class="menu-link noSelect">
+                        <span>Sale</span>
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="#" class="menu-link noSelect">
+                        <span>New Drops</span>
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="#" class="menu-link noSelect">
+                        <span>Lorem Classic</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="list list-right">
+
+            <button class="btn place-items-center noSelect" id="search-icon">
+                <i class="ri-search-line"></i>
+            </button>
+
+            <a href="#" class="place-items-center noSelect">
+                <i class="ri-shopping-bag-line"></i>
+            </a>
+
+            <button class="btn place-items-center screen-lg-hidden menu-toggle-icon noSelect" id="menu-toggle-icon">
+                <i class="ri-menu-3-line open-menu-icon"></i>
+                <i class="ri-close-line close-menu-icon"></i>
+            </button>
+
+            <a href="#" class="menu-link screen-sm-hidden fancy">
+                <span>Sign in</span>
+            </a>
+        </div>
+    </nav>
+</header>
+
+<!-- Search -->
+<section class="search section">
+    <div class="search-form-container container" id="search-form-container">
+
+        <div class="form-container-inner">
+
+            <form action="" class="form">
+                <input class="form-input" type="text" placeholder="What are you looking for?">
+                <button class="btn form-btn" type="submit">
+                    <i class="ri-search-line"></i>
+                </button>
+            </form>
+            <span class="form-note">Or press ESC to close.</span>
+
+        </div>
+
+        <button class="btn form-close-btn place-items-center noSelect" id="form-close-btn">
+            <i class="ri-close-line"></i>
+        </button>
+
+        <div class="suggestion-container">
+            <h4>Popular Search Terms</h4>
+
+            <ul class="suggest noSelect">
+                <li class="suggest-item">
+                    <a href="#">Men Lorem</a>
+                </li>
+                <li class="suggest-item">
+                    <a href="#">Women Lorem</a>
+                </li>
+                <li class="suggest-item">
+                    <a href="#">Kids Ipsum</a>
+                </li>
+                <li class="suggest-item">
+                    <a href="#">Party Pack</a>
+                </li>
+                <li class="suggest-item">
+                    <a href="#">Fire Shoes</a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</section>
