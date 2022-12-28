@@ -451,7 +451,7 @@ button.white {
 
 /* Hero */
 .hero {
-  background-image: url("../img/hero4.png");
+  background-image: url("../images/hero4.png");
   height: 65vh;
   width: 100%;
   background-size: cover;
@@ -469,7 +469,7 @@ button.white {
 }
 
 .hero button {
-  background-image: url("../img/button.png");
+  background-image: url("../images/button.png");
   background-color: transparent;
   border: 0;
   padding: 1.4rem 8rem 1.4rem 6.5rem;
@@ -642,7 +642,7 @@ button.white {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-image: url("../img/banner/b2.jpg");
+  background-image: url("../images/banner/b2.jpg");
   width: 100%;
   height: 30vh;
   background-size: cover;
@@ -753,7 +753,7 @@ button.white {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  background-image: url("../img/banner/b17.jpg");
+  background-image: url("../images/banner/b17.jpg");
   min-width: 100%;
   height: 30vh;
   background-size: cover;
@@ -763,7 +763,7 @@ button.white {
 }
 
 .sm-banner .banner-box-2 {
-  background-image: url("../img/banner/b10.jpg");
+  background-image: url("../images/banner/b10.jpg");
 }
 
 .sm-banner h4 {
@@ -881,8 +881,12 @@ button.white {
 
 .product-details .sm-product-imgs .sm-product-col {
   cursor: pointer;
-  width: 27%;
+  width: 30%;
   margin: 0 auto;
+}
+
+.product-details .sm-product-imgs .sm-product-col .sm-img-x {
+  display: none;
 }
 
 .product-details .sm-product-imgs .sm-product-col .active-img {
@@ -1116,7 +1120,7 @@ select {
   -webkit-appearance: none;
   appearance: none;
   background: transparent;
-  background-image: url("../img/icon/arrow-down-s-line.svg");
+  background-image: url("../images/icon/arrow-down-s-line.svg");
   background-repeat: no-repeat;
   background-position-x: 97%;
   background-position-y: 1rem;
@@ -1125,7 +1129,7 @@ select {
 
 input[type="date"] {
   background: transparent;
-  background-image: url("../img/icon/calendar-line.svg");
+  background-image: url("../images/icon/calendar-line.svg");
   background-repeat: no-repeat;
   background-position-x: 97%;
   background-position-y: 1.5rem;
@@ -1173,6 +1177,12 @@ input[type="date"]:valid::before {
   height: 100%;
   object-fit: cover;
   transition: transform .25s;
+}
+
+.art-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .blog-post-data {

@@ -1,20 +1,23 @@
 from django.shortcuts import render
+from .models import Product, Article
 
 # Create your views here.
 
 def home(request):
-    return render(request, 'home.html')
+    articles = Article.objects.all()[0:7]
+    context = {'articles': articles}
+    return render(request, 'home.html', context)
 
 def shop(request, pk):
-    return render(request, 'shop.html')
+    articles = Article.objects.all()[0:7]
+    context = {'articles': articles}
+    return render(request, 'shop.html', context)
 
 def product(request, pk):
-    product = None
-    #for i in products:
-        #if i['id'] == int(pk):
-            #product = i
-    #context = {'product': product}
-    return render(request, 'product.html')
+    product = Product.objects.get(id=pk)
+    articles = Article.objects.all()[0:7]
+    context = {'product': product, 'articles': articles}
+    return render(request, 'product.html', context)
 
 def emaillookup(request):
     return render(request, 'emaillookup.html')
@@ -26,5 +29,6 @@ def signup(request):
     return render(request, 'signup.html')
 
 def article(request, pk):
-    return render(request, 'article.html')
-    
+    article = Article.objects.get(id=pk)
+    context = {'article': article}
+    return render(request, 'article.html', context)

@@ -5,115 +5,24 @@
 
     <h2 class="section-title" data-name="AaLupino Stories">AaLupino Stories</h2>
 
-    <div class="swiper">
+    <div class="swiper swiper1">
         <div class="swiper-wrapper">
 
-            <a href="#" class="article swiper-slide">
+            {% for article in articles %}
+            <a href="{% url 'article' article.id %}" class="article swiper-slide">
                 <div class="article-container">
-                    <img src="{% static './assets/img/banner/b19.jpg' %}" alt="">
+                    <img src="{{ article.banner.url }}" alt="">
                     <div class="article-description">
-                        <h2>Lorem Ipsum Checkers</h2>
+                        <h2>{{ article.title }}</h2>
                         <span>
-                            Lorem ipsum Voluptate molestiae cumque distinctio vitae quis, hic nulla ex natus
-                            quibusdam
-                            alias
-                            quaerat accusamus labore dolorem nobis reiciendis.
+                            {{ article.parag1|slice:":100" }}
                         </span>
                     </div>
                 </div>
             </a>
-
-            <a href="#" class="article swiper-slide">
-                <div class="article-container">
-                    <img src="{% static './assets/img/banner/b19.jpg' %}" alt="">
-                    <div class="article-description">
-                        <h2>Lorem Ipsum Checkers</h2>
-                        <span>
-                            Lorem ipsum Voluptate molestiae cumque distinctio vitae quis, hic nulla ex natus
-                            quibusdam
-                            alias quaerat accusamus labore dolorem nobis reiciendis. </span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="#" class="article swiper-slide">
-                <div class="article-container">
-                    <img src="{% static './assets/img/banner/b19.jpg' %}" alt="">
-                    <div class="article-description">
-                        <h2>Lorem Ipsum Checkers</h2>
-                        <span>
-                            Lorem ipsum Voluptate molestiae cumque distinctio vitae quis, hic nulla ex natus
-                            quibusdam
-                            alias quaerat accusamus labore dolorem nobis reiciendis. </span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="#" class="article swiper-slide">
-                <div class="article-container">
-                    <img src="{% static './assets/img/banner/b19.jpg' %}" alt="">
-                    <div class="article-description">
-                        <h2>Lorem Ipsum Checkers</h2>
-                        <span>
-                            Lorem ipsum Voluptate molestiae cumque distinctio vitae quis, hic nulla ex natus
-                            quibusdam
-                            alias quaerat accusamus labore dolorem nobis reiciendis. </span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="#" class="article swiper-slide">
-                <div class="article-container">
-                    <img src="{% static './assets/img/banner/b19.jpg' %}" alt="">
-                    <div class="article-description">
-                        <h2>Lorem Ipsum Checkers</h2>
-                        <span>
-                            Lorem ipsum Voluptate molestiae cumque distinctio vitae quis, hic nulla ex natus
-                            quibusdam
-                            alias quaerat accusamus labore dolorem nobis reiciendis. </span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="#" class="article swiper-slide">
-                <div class="article-container">
-                    <img src="{% static './assets/img/banner/b19.jpg' %}" alt="">
-                    <div class="article-description">
-                        <h2>Lorem Ipsum Checkers</h2>
-                        <span>
-                            Lorem ipsum Voluptate molestiae cumque distinctio vitae quis, hic nulla ex natus
-                            quibusdam
-                            alias quaerat accusamus labore dolorem nobis reiciendis. </span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="#" class="article swiper-slide">
-                <div class="article-container">
-                    <img src="{% static './assets/img/banner/b19.jpg' %}" alt="">
-                    <div class="article-description">
-                        <h2>Lorem Ipsum Checkers</h2>
-                        <span>
-                            Lorem ipsum Voluptate molestiae cumque distinctio vitae quis, hic nulla ex natus
-                            quibusdam
-                            alias quaerat accusamus labore dolorem nobis reiciendis. </span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="#" class="article swiper-slide">
-                <div class="article-container">
-                    <img src="{% static './assets/img/banner/b19.jpg' %}" alt="">
-                    <div class="article-description">
-                        <h2>Lorem Ipsum Checkers</h2>
-                        <span>
-                            Lorem ipsum Voluptate molestiae cumque distinctio vitae quis, hic nulla ex natus
-                            quibusdam
-                            alias quaerat accusamus labore dolorem nobis reiciendis. </span>
-                    </div>
-                </div>
-            </a>
-
+            {% empty %}
+            <p>There is no stories.</p>
+            {% endfor %}
         </div>
     </div>
 

@@ -24,14 +24,28 @@ const menuToggleIcon = selectElement("#menu-toggle-icon");
 const formOpenBtn = selectElement("#search-icon");
 const formCloseBtn = selectElement("#form-close-btn");
 const searchContainer = selectElement("#search-form-container");
+const mobileMenu = selectElement("#menu");
 
 const toggleMenu = () => {
-  const mobileMenu = selectElement("#menu");
   mobileMenu.classList.toggle("activated");
   menuToggleIcon.classList.toggle("activated");
 };
 
 menuToggleIcon.addEventListener("click", toggleMenu);
+
+/*
+const iicon = selectElement(".iicon");
+const subMenu = selectElement(".sub-menu");
+
+window.addEventListener("click", function (e) {
+  if (e.target != iicon && e.target != menuToggleIcon && e.target != mobileMenu) {
+    menuToggleIcon.classList.remove("activated");
+    mobileMenu.classList.remove("activated");
+    subMenu.classList.remove("activated");
+    console.log("Outside Menu")
+  }
+})
+*/
 
 // Open/Close search form popup
 formOpenBtn.addEventListener("click", () =>
@@ -46,95 +60,31 @@ window.addEventListener("keyup", (event) => {
 });
 
 // Opening and Closing Sub Menu
-// Sub-Menu-1
-const subMenu1 = selectElement("#sub-menu-1");
-const menuLink1 = selectElement("#menu-link-1");
-const closeMenuBtn1 = selectElement("#close-menu-btn-1")
 
-menuLink1.addEventListener("click", () => {
-  subMenu1.classList.add("activated")
-  menuToggleIcon.classList.add("deactivated");
-});
+const subMenu = document.getElementsByClassName("sub-menu");
+const menuLinker = document.getElementsByClassName("menu-linker");
+const closeMenuBtn = document.getElementsByClassName("close-menu-btn");
 
-closeMenuBtn1.addEventListener("click", () => {
-  subMenu1.classList.remove("activated")
-  menuToggleIcon.classList.remove("deactivated")
-});
+const openSubMenu = () => {
 
-// Sub-Menu-2
-const subMenu2 = selectElement("#sub-menu-2");
-const menuLink2 = selectElement("#menu-link-2");
-const closeMenuBtn2 = selectElement("#close-menu-btn-2")
 
-menuLink2.addEventListener("click", () => {
-  subMenu2.classList.add("activated")
-  menuToggleIcon.classList.add("deactivated");
-});
+  for (let i = 0; i < menuLinker.length; i++) {
 
-closeMenuBtn2.addEventListener("click", () => {
-  subMenu2.classList.remove("activated")
-  menuToggleIcon.classList.remove("deactivated")
-});
+    menuLinker[i].addEventListener("click", () => {
+      subMenu[i].classList.add("activated")
+      menuToggleIcon.classList.add("deactivated")
+    })
 
-// Sub-Menu-3
-const subMenu3 = selectElement("#sub-menu-3");
-const menuLink3 = selectElement("#menu-link-3");
-const closeMenuBtn3 = selectElement("#close-menu-btn-3")
+    closeMenuBtn[i].addEventListener("click", () => {
+      subMenu[i].classList.remove("activated")
+      menuToggleIcon.classList.remove("deactivated")
+    })
 
-menuLink3.addEventListener("click", () => {
-  subMenu3.classList.add("activated")
-  menuToggleIcon.classList.add("deactivated");
-});
+  }
 
-closeMenuBtn3.addEventListener("click", () => {
-  subMenu3.classList.remove("activated")
-  menuToggleIcon.classList.remove("deactivated")
-});
+};
 
-// Sub-Menu-4
-const subMenu4 = selectElement("#sub-menu-4");
-const menuLink4 = selectElement("#menu-link-4");
-const closeMenuBtn4 = selectElement("#close-menu-btn-4")
-
-menuLink4.addEventListener("click", () => {
-  subMenu4.classList.add("activated")
-  menuToggleIcon.classList.add("deactivated");
-});
-
-closeMenuBtn4.addEventListener("click", () => {
-  subMenu4.classList.remove("activated")
-  menuToggleIcon.classList.remove("deactivated")
-});
-
-// Sub-Menu-5
-const subMenu5 = selectElement("#sub-menu-5");
-const menuLink5 = selectElement("#menu-link-5");
-const closeMenuBtn5 = selectElement("#close-menu-btn-5")
-
-menuLink5.addEventListener("click", () => {
-  subMenu5.classList.add("activated")
-  menuToggleIcon.classList.add("deactivated");
-});
-
-closeMenuBtn5.addEventListener("click", () => {
-  subMenu5.classList.remove("activated")
-  menuToggleIcon.classList.remove("deactivated")
-});
-
-// Sub-Menu-6
-const subMenu6 = selectElement("#sub-menu-6");
-const menuLink6 = selectElement("#menu-link-6");
-const closeMenuBtn6 = selectElement("#close-menu-btn-6")
-
-menuLink6.addEventListener("click", () => {
-  subMenu6.classList.add("activated")
-  menuToggleIcon.classList.add("deactivated");
-});
-
-closeMenuBtn6.addEventListener("click", () => {
-  subMenu6.classList.remove("activated")
-  menuToggleIcon.classList.remove("deactivated")
-});
+openSubMenu();
 
 // Switch theme/add to local storage
 const body = document.body;
@@ -159,7 +109,7 @@ themeToggleBtn.addEventListener("click", function () {
 });
 
 // Swiper 
-const swiper = new Swiper(".swiper", {
+const swiper = new Swiper(".swiper1", {
   // How many slides to show
   slidesPerView: "auto",
   // For free slides
@@ -189,14 +139,14 @@ const swiper = new Swiper(".swiper", {
 });
 
 /* Image Switcher */
-const mainImg = selectElement(".main-img")
+const mainImg = selectElement("#main-img")
 const smImg = document.getElementsByClassName("sm-img")
+const smImgX = document.getElementsByClassName("sm-img-x")
 
 const selectImg = () => {
   for (let i = 0; i < smImg.length; i++) {
     smImg[i].addEventListener("click", function () {
-      mainImg.src = smImg[i].src;
-
+      mainImg.src = smImgX[i].src;
       let currentImg = selectElement(".active-img");
       currentImg.classList.remove("active-img");
       this.classList.add("active-img")

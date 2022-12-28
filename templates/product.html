@@ -6,36 +6,65 @@
 <!-- Products Details -->
 <section class="product-details section" id="product-details">
     <div class="pro-description">
-        <span>Adidas</span>
-        <h5>Cartoon Summer T-Shirt</h5>
-        <h4>$98</h4>
+        <span>{{ product.name }}</span>
+        <h5>{{ product.description }}</h5>
+        <h4>${{ product.price }}</h4>
     </div>
     <div class="product-img">
-        <img src="{% static './assets/img/products/f1.jpg' %}" alt="" width="100%" class="main-img">
+        <img src="{{ product.sm_image_x1.url }}" alt="" width="100%" id="main-img">
 
         <div class="swiper swiper2">
             <div class="swiper-wrapper sm-product-imgs">
+
+                {% if product.sm_image1 and product.sm_image_x1 %}
                 <div class="sm-product-col swiper-slide">
-                    <img src="{% static './assets/img/products/f1.jpg' %}" alt="" width="100%" class="sm-img active-img">
+                    <img src="{{ product.sm_image_x1.url }}" class="sm-img-x">
+                    <img src="{{ product.sm_image1.url }}" alt="" width="100%" class="sm-img">
                 </div>
+                {% endif %}
+
+                {% if product.sm_image2 and product.sm_image_x2 %}
                 <div class="sm-product-col swiper-slide">
-                    <img src="{% static './assets/img/products/f3.jpg' %}" alt="" width="100%" class="sm-img">
+                    <img src="{{ product.sm_image_x2.url }}" class="sm-img-x">
+                    <img src="{{ product.sm_image2.url }}" alt="" width="100%" class="sm-img">
                 </div>
+                {% endif %}
+
+                {% if product.sm_image3 and product.sm_image_x3 %}
                 <div class="sm-product-col swiper-slide">
-                    <img src="{% static './assets/img/products/f4.jpg' %}" alt="" width="100%" class="sm-img">
+                    <img src="{{ product.sm_image_x3.url }}" class="sm-img-x">
+                    <img src="{{ product.sm_image3.url }}" alt="" width="100%" class="sm-img">
                 </div>
+                {% endif %}
+
+                {% if product.sm_image4 and product.sm_image_x4 %}
                 <div class="sm-product-col swiper-slide">
-                    <img src="{% static './assets/img/products/f5.jpg' %}" alt="" width="100%" class="sm-img">
+                    <img src="{{ product.sm_image_x4.url }}" class="sm-img-x">
+                    <img src="{{ product.sm_image4.url }}" alt="" width="100%" class="sm-img">
                 </div>
+                {% endif %}
+
+                {% if product.sm_image5 and product.sm_image_x5 %}
                 <div class="sm-product-col swiper-slide">
-                    <img src="{% static './assets/img/products/f6.jpg' %}" alt="" width="100%" class="sm-img">
+                    <img src="{{ product.sm_image_x5.url }}" class="sm-img-x">
+                    <img src="{{ product.sm_image5.url }}" alt="" width="100%" class="sm-img">
                 </div>
+                {% endif %}
+
+                {% if product.sm_image6 and product.sm_image_x6 %}
                 <div class="sm-product-col swiper-slide">
-                    <img src="{% static './assets/img/products/n5.jpg' %}" alt="" width="100%" class="sm-img">
+                    <img src="{{ product.sm_image_x6.url }}" class="sm-img-x">
+                    <img src="{{ product.sm_image6.url }}" alt="" width="100%" class="sm-img">
                 </div>
+                {% endif %}
+
+                {% if product.sm_image7 and product.sm_image_x7 %}
                 <div class="sm-product-col swiper-slide">
-                    <img src="{% static './assets/img/products/n4.jpg' %}" alt="" width="100%" class="sm-img">
+                    <img src="{{ product.sm_image7.url }}" class="sm-img-x">
+                    <img src="{{ product.sm_image7.url }}" alt="" width="100%" class="sm-img">
                 </div>
+                {% endif %}
+            
             </div>
         </div>
     </div>
