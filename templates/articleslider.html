@@ -9,7 +9,7 @@
         <div class="swiper-wrapper">
 
             {% for article in articles %}
-            <a href="{% url 'article' article.id %}" class="article swiper-slide">
+            <a href="{% url 'article' article.slug %}" class="article swiper-slide">
                 <div class="article-container">
                     <img src="{{ article.banner.url }}" alt="">
                     <div class="article-description">
