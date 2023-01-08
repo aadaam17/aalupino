@@ -1,0 +1,26 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<section class="section-header-offset">
+    <p>This is the <i>Profile</i> page!</p>
+    <div>
+        <a href="{% url 'create-product' %}">Create Product</a>
+        <br>
+        <hr>
+
+        {% for product in products %}
+        <a href="{% url 'update-product' product.id %}">Edit Product</a>
+        <a href="{% url 'delete-product' product.id %}">Delete Product</a>
+
+        <h5>{{product.id}} -- <a href="{% url 'product' product.pro_slug %}">{{ product.name }}</a></h5>
+        <p>{{product.description}}</p>
+        {% endfor %}
+    </div>
+
+    {% for item in article %}
+
+    {% endfor %}
+
+</section>
+{% endblock content %}

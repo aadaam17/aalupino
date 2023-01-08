@@ -235,7 +235,7 @@ button.white {
 .sub-menu .list button {
   display: flex;
   align-items: center;
-  gap: var(--gap);
+  gap: 1.5rem;
 }
 
 .sub-menu hr {
@@ -273,6 +273,11 @@ button.white {
   width: 100%;
 }
 
+.auth-user .menu-link {
+  margin-bottom: 3rem;
+  gap: 1rem;
+}
+
 .menu .menu-item .menu-link,
 .sub-menu .menu-item .menu-link {
   display: flex;
@@ -284,7 +289,7 @@ button.white {
   width: 100%;
 }
 
-.menu .menu-item .fancy span {
+.menu-item .fancy span {
   color: #ef3636;
 }
 
@@ -324,6 +329,7 @@ button.white {
 }
 
 .menu.activated,
+#sub-menu-0.activated,
 #sub-menu-1.activated,
 #sub-menu-2.activated,
 #sub-menu-3.activated,
@@ -1156,7 +1162,7 @@ input[type="date"]:valid::before {
   padding-bottom: 5rem;
 }
 
-.article-data{
+.article-data {
   display: flex;
   align-items: center;
   gap: var(--gap);

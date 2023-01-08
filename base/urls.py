@@ -8,10 +8,19 @@ urlpatterns = [
     path('products/', views.allproducts, name="allproducts"),
     path('products/<slug:slug>/', views.products, name="products"),
     path('product/<slug:slug>/', views.product, name="product"),
+    path('article/<slug:slug>/', views.article, name="article"),
+    path('profile/', views.profile, name="profile"),
     path('login/', views.emaillookup, name="emaillookup"),
     path('password/', views.password, name="password"),
     path('signup/', views.signup, name="signup"),
-    path('article/<slug:slug>/', views.article, name="article"),
+
+    path('create-product/', views.createProduct, name="create-product"),
+    path('create-article/', views.createArticle, name="create-article"),
+    path('update-product/<str:pk>/', views.updateProduct, name="update-product"),
+    path('update-article/<str:pk>/', views.updateArticle, name="update-article"),
+
+    path('delete-product/<str:pk>/', views.deleteProduct, name="delete-product"),
+    path('delete-article/<str:pk>/', views.deleteArticle, name="delete-article"),
 
 ]
 
