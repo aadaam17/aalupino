@@ -7,26 +7,34 @@
         <p class="login-form-note">Now let's make you a Member.</p>
         <div class="email-check">
             <p> <span>We've sent a code to</span> <br>
-                <span>example@gmail.com</span> <a href="{% url 'emaillookup' %}">Edit</a>
+                <span>{{email}}</span> <a href="{{request.META.HTTP_REFERER}}">Edit</a>
             </p>
         </div>
-        <form action="{% url 'home' %}" class="form">
+        <form method="POST" action="" class="form">
+            {% csrf_token %}
             <div class="form-input-wrapper">
+                {% load widget_tweaks %}
+                
+                <div class="input-wrapper">
+                    {% render_field form.email class="login-form-input" id="email-input" placeholder="Email" type="email" %}
+                </div>
+
                 <div class="input-wrapper">
                     <input class="login-form-input" id="code" type="number" placeholder="Code" required />
                     <button type="button" class="btn noSelect place-icon" id="refresh-btn">
                         <i class="ri-refresh-line"></i> </button>
                 </div>
+                
                 <div class="name-input-wrapper input-wrapper">
                     <div class="first-name">
-                        <input type="text" class="login-form-input" id="first-name" placeholder="First Name" required />
+                        {% render_field form.first_name class="login-form-input" id="first-name" placeholder="First Name" type="text" %}
                     </div>
                     <div class="last-name">
-                        <input type="text" class="login-form-input" id="last-name" placeholder="Surname" required />
+                        {% render_field form.last_name class="login-form-input" id="last-name" placeholder="Last Name" type="text" %}
                     </div>
                 </div>
-                <div class="input-wrapper"> <input class="login-form-input" id="password" type="password"
-                        placeholder="Password" required />
+                <div class="input-wrapper">
+                    {% render_field form.password1 class="login-form-input" id="password" placeholder="Password" type="password" %}
                     <div class="instruct">
                         <p><span><i class="ri-close-line"></i></span>Minimum of 8 characters</p>
                         <p><span><i class="ri-close-line"></i></span>Uppercase, lowercase and one number</p>
@@ -43,7 +51,7 @@
                     </select>
                 </div>
                 <div class="input-wrapper">
-                    <input class="login-form-input" id="date" type="date" placeholder="Date" required />
+                    {% render_field form.date_of_birth class="login-form-input" id="date" placeholder="Date" type="date" %}
                 </div>
 
             </div>
@@ -60,7 +68,9 @@
                     </p>
                 </div>
             </div>
-            <button class="btn login-form-btn" type="submit"> <span>Create Account</span>
+
+            <button class="btn login-form-btn" type="submit">
+                <span>Create Account</span>
             </button>
         </form>
 </section>

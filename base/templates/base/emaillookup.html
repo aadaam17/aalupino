@@ -7,8 +7,11 @@
 <section class="login-form-container container">
     <div class="form-container-inner">
         <p class="login-form-note">Enter your email to join us or sign in</p>
-        <form action="{% url 'password' %}" class="form"> <input class="login-form-input email-input" type="email"
-                placeholder="Enter your email address" required>
+        <form method="POST" action="" class="form">
+            {% csrf_token %}
+            <input class="login-form-input email-input" type="email" name="email"
+                value="{{email}}" placeholder="Enter your email address" required>
+
             <div class="form-condition">
                 <p>By continuing, I agree to AaLupino's <span>Privacy Policy</span> and <span>Terms of Use.</span>
                 </p>

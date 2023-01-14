@@ -10,9 +10,11 @@ urlpatterns = [
     path('product/<slug:slug>/', views.product, name="product"),
     path('article/<slug:slug>/', views.article, name="article"),
     path('profile/', views.profile, name="profile"),
-    path('login/', views.emaillookup, name="emaillookup"),
+
+    path('login/', views.emaillookup, name="login"),
+    path('logout/', views.logoutUser, name="logout"),
     path('password/', views.password, name="password"),
-    path('signup/', views.signup, name="signup"),
+    path('signup/', views.register, name="signup"),
 
     path('create-product/', views.createProduct, name="create-product"),
     path('create-article/', views.createArticle, name="create-article"),

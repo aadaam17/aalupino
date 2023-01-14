@@ -452,7 +452,7 @@ button.white {
 
 /* Section*/
 .section-header-offset {
-  margin-top: 5.6rem;
+  margin-top: 5.8rem;
 }
 
 /* Hero */
@@ -1040,6 +1040,10 @@ button.white {
   text-align: start;
   margin-top: 0;
   gap: .5rem;
+}
+
+#email-input {
+  display: none;
 }
 
 .email-check a {
