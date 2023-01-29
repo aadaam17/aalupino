@@ -3,39 +3,11 @@
 {% block content %}
 
 <section class="section-header-offset">
-    <p>This is the <i>Profile</i> page!</p>
-
-    <div>
-        <a href="{% url 'create-product' %}">Create Product</a>
-        <br>
-        <hr>
-
-        {% for product in products %}
-        <a href="{% url 'update-product' product.id %}">Edit</a>
-        <a href="{% url 'delete-product' product.id %}">Delete</a>
-
-        <h5>{{product.id}} -- <a href="{% url 'product' product.pro_slug %}">{{ product.name }}</a></h5>
-        <p>{{product.description}}</p>
-        {% endfor %}
+    <div class="profile container">
+        
     </div>
-
-    <br>
-    <hr>
-
-    <div>
-        <a href="{% url 'create-article' %}">Create Article</a>
-        <br>
-        <hr>
-
-        {% for article in articles %}
-        <a href="{% url 'update-article' article.id %}">Edit</a>
-        <a href="{% url 'delete-article' article.id %}">Delete</a>
-
-        <h5>{{article.id}} -- <a href="{% url 'article' article.slug %}">{{ article.title }}</a></h5>
-        <p>{{article.parag1|slice:":100"}}</p>
-        {% endfor %}
-    </div>
-
 
 </section>
+{% include 'base/suggestproduct.html' %}
+{% include 'base/articleslider.html' %}
 {% endblock content %}

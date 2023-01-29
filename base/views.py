@@ -60,7 +60,6 @@ def register(request):
 
     if request.method == 'POST':
         form = UserForm(request.POST)
-        form.fields['email'].initial = email
 
         if form.is_valid():
             user = form.save(commit=False)
@@ -119,6 +118,17 @@ def product(request, slug):
     return render(request, 'base/product.html', context)
 
 @login_required(login_url='login')
+def dashboard(request):
+    products = Product.objects.all()
+    articles = Article.objects.all()
+
+    context = {
+        'products': products,
+        'articles': articles,
+    }
+    return render(request, 'base/dashboard.html', context)
+
+@login_required(login_url='login')
 def profile(request):
     products = Product.objects.all()
     articles = Article.objects.all()
@@ -133,68 +143,74 @@ def article(request, slug):
     context = {'article': article}
     return render(request, 'base/article.html', context)
 
+@login_required(login_url='login')
 def createProduct(request):
     form = ProductForm()
 
     if request.method == 'POST':
-        form = ProductForm(request.POST)
+        form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('profile')
+            return redirect('dashboard')
 
     context = {'form': form}
     return render(request, 'base/product_form.html', context)
 
+@login_required(login_url='login')
 def updateProduct(request, pk):
     product = Product.objects.get(id=pk)
     form = ProductForm(instance=product)
 
     if request.method == 'POST':
-        form = ProductForm(request.POST, instance=product)
+        form = ProductForm(request.POST, request.FILES, instance=product)
         if form.is_valid():
             form.save()
-            return redirect('profile')
+            return redirect('dashboard')
 
     context = {'form': form}
     return render(request, 'base/product_form.html', context)
 
+@login_required(login_url='login')
 def deleteProduct(request, pk):
     product = Product.objects.get(id=pk)
 
     if request.method == 'POST':
         product.delete()
-        return redirect('profile')
+        return redirect('dashboard')
     return render(request, 'base/delete.html', {'obj': product})
 
+@login_required(login_url='login')
 def createArticle(request):
     form = ArticleForm()
 
     if request.method == 'POST':
-        form = ArticleForm(request.POST)
+        form = ArticleForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('profile')
+            return redirect('dashboard')
 
     context = {'form': form}
     return render(request, 'base/article_form.html', context)
 
+@login_required(login_url='login')
 def updateArticle(request, pk):
     article = Article.objects.get(id=pk)
     form = ArticleForm(instance=article)
 
     if request.method == 'POST':
-        form = ArticleForm(request.POST, instance=article)
+        form = ArticleForm(request.POST, request.FILES, instance=article)
         if form.is_valid():
             form.save()
-            return redirect('profile')
+            return redirect('dashboard')
 
     context = {'form': form}
     return render(request, 'base/article_form.html', context)
 
+@login_required(login_url='login')
 def deleteArticle(request, pk):
     article = Article.objects.get(id=pk)
     
     if request.method == 'POST':
         article.delete()
-        return redirect('profile')
+        return redirect('dashboard')
     return render(request, 'base/delete.html', {'obj': article})

@@ -11,6 +11,8 @@ urlpatterns = [
     path('article/<slug:slug>/', views.article, name="article"),
     path('profile/', views.profile, name="profile"),
 
+    path('dashboard/', views.dashboard, name="dashboard"),
+
     path('login/', views.emaillookup, name="login"),
     path('logout/', views.logoutUser, name="logout"),
     path('password/', views.password, name="password"),

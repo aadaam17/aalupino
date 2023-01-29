@@ -1272,3 +1272,10 @@ input[type="date"]:valid::before {
   margin-top: auto;
   margin-bottom: 0;
 }
+
+/* Creation Page */
+form label {
+  display: flex;
+  text-align: start;
+  margin-bottom: 1rem;
+}
